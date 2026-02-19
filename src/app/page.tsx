@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AdCard from "@/components/AdCard";
-import { videoAds, textAds, retargetingAds, hotAds, type AdLayer, type AdFormat } from "@/data/ads";
+import { videoAds, textAds, retargetingAds, hotAds } from "@/data/ads";
 
 type Tab = "all" | "video" | "text" | "retargeting" | "hot" | "deploy";
+
+const STORAGE_KEY = "rei-transfer-completed-ads";
 
 const tabs: { id: Tab; label: string; count?: number }[] = [
   { id: "all", label: "All Ads" },
@@ -15,18 +17,53 @@ const tabs: { id: Tab; label: string; count?: number }[] = [
   { id: "deploy", label: "Deployment Guide" },
 ];
 
-const stats = [
-  { label: "Video Scripts", value: videoAds.length, color: "text-purple-400" },
-  { label: "Text/Image Ads", value: textAds.length, color: "text-emerald-400" },
-  { label: "Retargeting", value: retargetingAds.length, color: "text-amber-400" },
-  { label: "Hot Retarget", value: hotAds.length, color: "text-red-400" },
-];
+const allAds = [...videoAds, ...textAds, ...retargetingAds, ...hotAds];
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("all");
   const [search, setSearch] = useState("");
+  const [completedIds, setCompletedIds] = useState<Set<string>>(new Set());
+  const [hideCompleted, setHideCompleted] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
 
-  const allAds = [...videoAds, ...textAds, ...retargetingAds, ...hotAds];
+  // Hydrate from localStorage on mount
+  useEffect(() => {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored) {
+      try {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          setCompletedIds(new Set(parsed));
+        }
+      } catch {
+        // ignore invalid JSON
+      }
+    }
+    setHydrated(true);
+  }, []);
+
+  // Persist to localStorage on change
+  useEffect(() => {
+    if (hydrated) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...completedIds]));
+    }
+  }, [completedIds, hydrated]);
+
+  const toggleComplete = (id: string) => {
+    setCompletedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const completedCount = completedIds.size;
+  const totalCount = allAds.length;
+  const progressPct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   const filteredAds = allAds.filter((ad) => {
     if (activeTab === "deploy") return false;
@@ -34,6 +71,8 @@ export default function Home() {
     if (activeTab === "text" && ad.format !== "text") return false;
     if (activeTab === "retargeting" && ad.layer !== "warm") return false;
     if (activeTab === "hot" && ad.layer !== "hot") return false;
+
+    if (hideCompleted && completedIds.has(ad.id)) return false;
 
     if (search) {
       const q = search.toLowerCase();
@@ -47,6 +86,13 @@ export default function Home() {
     return true;
   });
 
+  const stats = [
+    { label: "Video Scripts", value: videoAds.length, color: "text-purple-400" },
+    { label: "Text/Image", value: textAds.length, color: "text-emerald-400" },
+    { label: "Retargeting", value: retargetingAds.length, color: "text-amber-400" },
+    { label: "Hot Retarget", value: hotAds.length, color: "text-red-400" },
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -58,7 +104,7 @@ export default function Home() {
                 REI Transfer <span className="text-zinc-500">Marketing Materials</span>
               </h1>
               <p className="text-xs text-zinc-500 mt-0.5">
-                Target: Google Ads Operators &middot; $5K–$15K/mo PPC
+                Target: Google Ads Operators &middot; $5K&ndash;$15K/mo PPC
               </p>
             </div>
             <div className="hidden sm:flex items-center gap-3">
@@ -68,6 +114,31 @@ export default function Home() {
                   <p className="text-[10px] text-zinc-500 uppercase tracking-wider">{s.label}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Progress Bar */}
+          <div className="mt-3">
+            <div className="flex items-center justify-between mb-1.5">
+              <span className="text-xs font-medium text-zinc-400">
+                Progress: {completedCount} / {totalCount} completed ({progressPct}%)
+              </span>
+              <button
+                onClick={() => setHideCompleted(!hideCompleted)}
+                className={`text-xs font-medium px-2.5 py-1 rounded-md transition-colors ${
+                  hideCompleted
+                    ? "bg-emerald-500/20 text-emerald-300"
+                    : "bg-zinc-800 text-zinc-400 hover:text-zinc-300"
+                }`}
+              >
+                {hideCompleted ? "Showing incomplete only" : "Show all"}
+              </button>
+            </div>
+            <div className="h-2 w-full rounded-full bg-zinc-800 overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all duration-500"
+                style={{ width: `${progressPct}%` }}
+              />
             </div>
           </div>
         </div>
@@ -119,26 +190,77 @@ export default function Home() {
               <>
                 <SectionHeader title="Layer 1 — Cold Traffic: Video Ads" count={videoAds.length} color="blue" />
                 {videoAds
-                  .filter((ad) => !search || filteredAds.includes(ad))
-                  .map((ad) => <AdCard key={ad.id} ad={ad} />)}
+                  .filter((ad) => {
+                    if (hideCompleted && completedIds.has(ad.id)) return false;
+                    if (!search) return true;
+                    return filteredAds.includes(ad);
+                  })
+                  .map((ad) => (
+                    <AdCard
+                      key={ad.id}
+                      ad={ad}
+                      completed={completedIds.has(ad.id)}
+                      onToggleComplete={toggleComplete}
+                    />
+                  ))}
 
                 <SectionHeader title="Layer 1 — Cold Traffic: Text/Image Ads" count={textAds.length} color="emerald" />
                 {textAds
-                  .filter((ad) => !search || filteredAds.includes(ad))
-                  .map((ad) => <AdCard key={ad.id} ad={ad} />)}
+                  .filter((ad) => {
+                    if (hideCompleted && completedIds.has(ad.id)) return false;
+                    if (!search) return true;
+                    return filteredAds.includes(ad);
+                  })
+                  .map((ad) => (
+                    <AdCard
+                      key={ad.id}
+                      ad={ad}
+                      completed={completedIds.has(ad.id)}
+                      onToggleComplete={toggleComplete}
+                    />
+                  ))}
 
                 <SectionHeader title="Layer 2 — Warm Retargeting" count={retargetingAds.length} color="amber" />
                 {retargetingAds
-                  .filter((ad) => !search || filteredAds.includes(ad))
-                  .map((ad) => <AdCard key={ad.id} ad={ad} />)}
+                  .filter((ad) => {
+                    if (hideCompleted && completedIds.has(ad.id)) return false;
+                    if (!search) return true;
+                    return filteredAds.includes(ad);
+                  })
+                  .map((ad) => (
+                    <AdCard
+                      key={ad.id}
+                      ad={ad}
+                      completed={completedIds.has(ad.id)}
+                      onToggleComplete={toggleComplete}
+                    />
+                  ))}
 
                 <SectionHeader title="Layer 3 — Hot Retargeting" count={hotAds.length} color="red" />
                 {hotAds
-                  .filter((ad) => !search || filteredAds.includes(ad))
-                  .map((ad) => <AdCard key={ad.id} ad={ad} />)}
+                  .filter((ad) => {
+                    if (hideCompleted && completedIds.has(ad.id)) return false;
+                    if (!search) return true;
+                    return filteredAds.includes(ad);
+                  })
+                  .map((ad) => (
+                    <AdCard
+                      key={ad.id}
+                      ad={ad}
+                      completed={completedIds.has(ad.id)}
+                      onToggleComplete={toggleComplete}
+                    />
+                  ))}
               </>
             )}
-            {activeTab !== "all" && filteredAds.map((ad) => <AdCard key={ad.id} ad={ad} />)}
+            {activeTab !== "all" && filteredAds.map((ad) => (
+              <AdCard
+                key={ad.id}
+                ad={ad}
+                completed={completedIds.has(ad.id)}
+                onToggleComplete={toggleComplete}
+              />
+            ))}
             {filteredAds.length === 0 && activeTab !== "all" && (
               <p className="text-center text-zinc-500 py-12">No ads match your search.</p>
             )}
@@ -183,6 +305,8 @@ function DeploymentGuide() {
             { pair: 'Video #1 "The Google Cliff" + Text #1 "The AI Cliff"', note: "Lead with AI disruption. Novel, data-backed, creates urgency." },
             { pair: 'Video #2 "The $80 Click" + Text #3 "The Compounding Asset"', note: "Unit economics comparison. Let the math sell." },
             { pair: 'Video #7 "The PPC Treadmill" + Text #5 "The Auction You Can\'t Win"', note: "Emotional + structural. Hits operators who feel it but can't name it." },
+            { pair: 'Video #10 "The Speed Race" + Text #6 "The Split Test Challenge"', note: "Speed-to-lead frustration + data-driven competitive challenge." },
+            { pair: 'Video #12 "The 4x Close Rate" + Text #8 "The Close Rate Gap"', note: "Close rate focus. Reframes the problem from lead volume to lead quality." },
           ].map((item, i) => (
             <div key={i} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
               <p className="text-sm font-semibold text-white">{i + 1}. {item.pair}</p>
@@ -191,11 +315,11 @@ function DeploymentGuide() {
           ))}
         </div>
         <div className="mt-3 rounded-lg bg-zinc-900/50 p-4 space-y-1.5 text-sm text-zinc-400">
-          <p>4. Launch 3 video + 2 text ads simultaneously</p>
-          <p>5. Run 7 days at $50–$100/day per ad set</p>
-          <p>6. Kill any ad above 2x target CPL after 1,000+ impressions</p>
-          <p>7. Double budget on winner. Launch new variation of winning hook.</p>
-          <p>8. Add retargeting layers at Day 7</p>
+          <p>6. Launch 3 video + 2 text ads simultaneously</p>
+          <p>7. Run 7 days at $50-$100/day per ad set</p>
+          <p>8. Kill any ad above 2x target CPL after 1,000+ impressions</p>
+          <p>9. Double budget on winner. Launch new variation of winning hook.</p>
+          <p>10. Add retargeting layers at Day 7</p>
         </div>
       </section>
 
@@ -293,12 +417,12 @@ function DeploymentGuide() {
             </thead>
             <tbody className="divide-y divide-zinc-800/50">
               {[
-                { metric: "CPM", target: "$15–$40", kill: ">$60 (audience too narrow or ad fatigue)" },
+                { metric: "CPM", target: "$15-$40", kill: ">$60 (audience too narrow or ad fatigue)" },
                 { metric: "CTR (link)", target: "1.5%+", kill: "<0.8% after 2,000 impressions" },
-                { metric: "CPL (lead form)", target: "$30–$75", kill: ">$150" },
-                { metric: "Landing page conversion", target: "15–25%", kill: "<8%" },
-                { metric: "Cost per booked call", target: "$150–$400", kill: ">$600" },
-                { metric: "Show rate", target: "65–80%", kill: "<50% (fix confirmation sequence)" },
+                { metric: "CPL (lead form)", target: "$30-$75", kill: ">$150" },
+                { metric: "Landing page conversion", target: "15-25%", kill: "<8%" },
+                { metric: "Cost per booked call", target: "$150-$400", kill: ">$600" },
+                { metric: "Show rate", target: "65-80%", kill: "<50% (fix confirmation sequence)" },
               ].map((row) => (
                 <tr key={row.metric}>
                   <td className="py-2.5 pr-4 font-medium text-white">{row.metric}</td>

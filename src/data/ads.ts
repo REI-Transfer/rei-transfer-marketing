@@ -633,6 +633,368 @@ Link below. We'll show you what it looks like to build your own.
 
 Or keep feeding data to a platform that holds it hostage and charges you more every quarter to access it.`,
   },
+  {
+    id: "video-10",
+    number: 10,
+    title: "The Speed Race",
+    layer: "cold",
+    format: "video",
+    angle: "PPC leads fill out 4-5 forms simultaneously. Your team races against 4 other investors to call first. Pre-distressed = you're the only one in the room.",
+    duration: "70 seconds",
+    emotionalState: "Frustrated recognition — the operator who knows the speed-to-lead game is broken but keeps playing it",
+    script: `**[VISUAL: Speaker at desk, phone in hand. Text overlay: "Your Google lead just filled out 4 other forms. You have 90 seconds."]**
+
+**[0:00–0:12] HOOK**
+
+Your phone rings. New lead from Google PPC. "Sell my house fast" search. High intent. You're excited.
+
+But you're already losing.
+
+**[Scroll Stop]** Because that homeowner didn't just fill out your form.
+
+**[Snapback]** They filled out four others. And right now, four other investors are picking up their phones at the same time you are. The deal doesn't go to the best operator. It goes to the fastest dialer.
+
+---
+
+**[0:12–0:30] THE RACE — Agreements 1 & 2**
+
+This is the reality of Google PPC leads. Every single one is shared.
+
+The homeowner typed a query. Saw multiple ads. Clicked 3 to 5 of them. Filled out 3 to 5 forms. And now they're fielding calls from 3 to 5 investors — all saying the same thing.
+
+**[VISUAL: Text overlay — "Google PPC lead → 4.2 average form fills per homeowner"]**
+
+Your close rate isn't determined by your offer, your rapport, or your acquisition skills. It's determined by whether you dialed first. By 90 seconds.
+
+Therefore, you didn't build a lead generation system. You built a speed-dialing competition. And the moment someone gets a faster auto-dialer, your close rate drops.
+
+---
+
+**[0:30–0:50] THE ALTERNATIVE — Agreements 3 & 4**
+
+Pre-distressed Meta leads are different at a structural level.
+
+These homeowners didn't search anything. They didn't fill out multiple forms. They've been seeing your brand in their feed for 6 to 12 weeks. They know your name. They trust your content. When they fill out your form — it's your form. Not one of five.
+
+**[VISUAL: Text overlay — "PPC lead: 1 of 5 calls. Meta lead: the only call."]**
+
+Your team picks up the phone. The homeowner says: "Yeah, I've been seeing your posts. I think I'm ready to talk."
+
+No race. No competition. No speed-to-lead anxiety. Just a warm conversation with someone who chose you.
+
+Therefore, your close rate doubles. Not because your team got better. Because the lead arrived different.
+
+---
+
+**[0:50–1:10] CTA + ANTI-CTA**
+
+If your acquisition team is burning out chasing shared leads and losing deals to whoever dials faster — the problem isn't your team. It's the channel.
+
+Link below. Free analysis. We'll show you what exclusive pre-distressed leads look like in your markets.
+
+Or keep racing four other investors to every lead and hoping you dial fastest. That's not a business model. That's a coin flip.`,
+  },
+  {
+    id: "video-11",
+    number: 11,
+    title: "Your PPC Agency Won't Tell You This",
+    layer: "cold",
+    format: "video",
+    angle: "Your PPC agency profits when you spend more — they have zero incentive to tell you the platform is declining. Misaligned incentives.",
+    duration: "75 seconds",
+    emotionalState: "Betrayal realization — 'My agency has been gaslighting me'",
+    script: `**[VISUAL: Speaker leans forward, conversational. Text overlay: "Your PPC agency makes more money when your CPC goes up."]**
+
+**[0:00–0:12] HOOK**
+
+Ask your PPC agency a question. A simple one.
+
+"If Google's search volume is declining because of AI — should I be spending more on Google Ads or less?"
+
+**[Scroll Stop]** Watch what happens to their face.
+
+**[Snapback]** They won't tell you the truth. Because the truth costs them money. Here's why.
+
+---
+
+**[0:12–0:32] THE MISALIGNMENT — Agreements 1 & 2**
+
+Most PPC agencies charge a percentage of ad spend. 10%, 15%, sometimes 20%. The more you spend, the more they make.
+
+When your CPC goes up? They make more money. When Google raises the auction floor? They make more money. When AI eats your search volume and you have to increase budget to maintain the same lead count? They make more money.
+
+**[VISUAL: Text overlay — "Your CPC went up 35% this year. Your agency's revenue went up 35% too."]**
+
+Therefore, your agency is financially incentivized to keep you on Google — even as the platform declines. Every structural problem that makes Google worse for you makes Google better for them.
+
+They don't wake up planning to deceive you. But the incentive structure means they'll never be the one to tell you it's time to diversify. Because diversifying off Google means diversifying off their revenue.
+
+---
+
+**[0:32–0:55] THE REALITY CHECK — Agreements 3 & 4**
+
+Here's what an honest assessment looks like.
+
+Google PPC for "sell my house fast" keywords in 2026: CPCs up 40% from 2024. Click volume down 25% due to AI Overviews. Cost per lead: $300 to $800. Getting worse every quarter.
+
+**[VISUAL: Text overlay — "Your agency optimizes campaigns. They can't optimize a shrinking platform."]**
+
+Your agency can optimize your campaigns. They can test headlines. Adjust bidding strategies. Refine landing pages. And all of that matters — inside a healthy platform.
+
+But they can't fix the fact that 65% of searches end without a click. They can't fix AI Overviews stealing your impressions. They can't fix Opendoor bidding $80 a click.
+
+Those are platform problems. Not campaign problems. And your agency profits from you not knowing the difference.
+
+---
+
+**[0:55–1:15] CTA + ANTI-CTA**
+
+I'm not saying fire your agency. I'm saying get a second opinion from someone who doesn't profit from your Google spend.
+
+Link below. Free PPC vs. Meta analysis. We'll show you the real numbers — no percentage of ad spend attached. Fifteen minutes.
+
+Or keep trusting the people whose paycheck depends on you never questioning the platform. That's not advice. That's a subscription.`,
+  },
+  {
+    id: "video-12",
+    number: 12,
+    title: "The 4x Close Rate",
+    layer: "cold",
+    format: "video",
+    angle: "Pre-distressed Meta leads close at 3-4x the rate of PPC leads because trust is built before the first call",
+    duration: "65 seconds",
+    emotionalState: "Analytical curiosity — 'If the close rate is really that different, I need to understand why'",
+    script: `**[VISUAL: Speaker with a whiteboard. Two columns drawn. Text overlay: "Same acquisition team. 4x the close rate. Here's why."]**
+
+**[0:00–0:10] HOOK**
+
+If I told you there was a lead source where your existing acquisition team — same people, same scripts, same process — could close at 3 to 4 times their current rate, you'd want to know why.
+
+**[Scroll Stop]** It's not a magic script.
+
+**[Snapback]** It's the 8 weeks of trust that happened before your team ever dialed.
+
+---
+
+**[0:10–0:28] THE TRUST GAP — Agreements 1 & 2**
+
+**[VISUAL: Column 1 — "Google PPC Lead"]**
+
+Google PPC lead arrives cold. They searched. They clicked. They filled out a form. They've never heard of your company. Your rep calls — it's a stranger calling a stranger.
+
+Close rate on PPC leads in competitive markets: 3 to 5%.
+
+**[VISUAL: Column 2 — "Pre-Distressed Meta Lead"]**
+
+Pre-distressed Meta lead has been seeing your brand for 6 to 12 weeks. Educational content. Value. Trust signals. When they fill out your form, they already know your company name. They've watched your videos. They feel like they know you.
+
+Your rep calls — it's a follow-up to a relationship, not a cold introduction.
+
+Close rate on pre-distressed Meta leads: 12 to 18%.
+
+**[VISUAL: Text overlay — "PPC: 4% close rate. Meta pre-distressed: 15% close rate. Same team."]**
+
+---
+
+**[0:28–0:48] THE MATH — Agreements 3 & 4**
+
+Therefore, the math shifts dramatically.
+
+100 PPC leads at $400 each = $40,000 spend. 4% close rate = 4 deals. Cost per deal: $10,000.
+
+100 Meta leads at $55 each = $5,500 spend. 15% close rate = 15 deals. Cost per deal: $367.
+
+**[VISUAL: Text overlay — "PPC: $10K/deal. Meta: $367/deal. 27x more efficient."]**
+
+Your team doesn't need more leads. They need better leads. Leads that arrive with trust already built. Leads that don't have four other investors calling at the same time.
+
+---
+
+**[0:48–1:05] CTA + ANTI-CTA**
+
+If your acquisition team's close rate has been stuck between 3 and 5% — it's not the team. It's the lead quality.
+
+Link below. Free analysis. We'll show you what pre-distressed leads look like in your markets and what happens to your close rate when trust arrives before the call.
+
+Or keep giving your team cold leads from a platform where the homeowner filled out four other forms. The team isn't the bottleneck. The channel is.`,
+  },
+  {
+    id: "video-13",
+    number: 13,
+    title: "The Google Tax",
+    layer: "cold",
+    format: "video",
+    angle: "You're paying a hidden tax on every deal — the Google Tax. It's not in your P&L but it's destroying your margins.",
+    duration: "60 seconds",
+    emotionalState: "Reframe shock — seeing a cost they never categorized as a 'tax'",
+    script: `**[VISUAL: Speaker at desk with a calculator. Text overlay: "There's a tax on every deal you close. It's not from the IRS."]**
+
+**[0:00–0:10] HOOK**
+
+You're paying a tax on every deal you close. It's not federal. It's not state. It doesn't show up on your 1099.
+
+**[Scroll Stop]** But it's the biggest line item on your P&L.
+
+**[Snapback]** It's the Google Tax. And it's been going up every quarter for the last two years.
+
+---
+
+**[0:10–0:28] THE TAX — Agreements 1 & 2**
+
+The Google Tax is the difference between what your cost per deal should be and what Google's auction forces it to be.
+
+Fair market cost to acquire a motivated seller lead: $30 to $75. That's what it costs on pre-distressed Meta targeting.
+
+What Google charges you: $300 to $800 per lead. By the time you convert at 4%, your cost per deal is $5,000 to $7,000.
+
+**[VISUAL: Text overlay — "Fair value: $1,200/deal. Google's price: $5,500/deal. The difference is the Google Tax."]**
+
+Therefore, on every single deal you close through PPC, you're paying a $3,000 to $5,000 tax. Not to the government. To Google's auction.
+
+That's money straight off your margin. Every deal. Every month. Every quarter.
+
+---
+
+**[0:28–0:45] THE ELIMINATION — Agreements 3 & 4**
+
+Pre-distressed Meta targeting eliminates the Google Tax entirely.
+
+You're not in an auction. You're not competing against iBuyers. You're not paying $60 for a click. You're reaching homeowners before they search — at $30 to $75 per lead.
+
+**[VISUAL: Text overlay — "Eliminate the Google Tax: $30-$75/lead. $1,200/deal."]**
+
+Your cost per deal drops from $5,500 to $1,200. That's not a marginal improvement. That's $4,300 back in your pocket. Per deal. Per month. Compounding.
+
+---
+
+**[0:45–1:00] CTA + ANTI-CTA**
+
+How much are you paying in Google Tax this year? $50K? $100K? More?
+
+Link below. Free analysis. We'll calculate your Google Tax and show you what your margins look like without it.
+
+Or keep paying $4,000+ per deal in hidden platform costs and call it "marketing." The IRS doesn't tax you this much. Why does Google?`,
+  },
+  {
+    id: "video-14",
+    number: 14,
+    title: "The 3AM Dashboard",
+    layer: "cold",
+    format: "video",
+    angle: "The emotional toll of watching Google Ads costs climb while leads decline — the anxiety PPC operators feel but don't talk about",
+    duration: "75 seconds",
+    emotionalState: "Emotional truth — naming the private anxiety operators won't admit publicly",
+    script: `**[VISUAL: Dark room, phone screen glowing. Speaker talks directly to camera, low-key, honest. Text overlay: "3AM. Checking Google Ads dashboard. Again."]**
+
+**[0:00–0:15] HOOK**
+
+It's 3AM. You can't sleep. You pick up your phone. Open Google Ads.
+
+You check the spend. Check the CPL. Check the lead count. Do the math in your head. Realize the numbers are worse than yesterday.
+
+**[Scroll Stop]** Close the app. Try to sleep.
+
+**[Snapback]** You've done this before. Last week. Last month. Every month for the past year. And the numbers keep getting worse. But you don't tell anyone. Because what would you say? "Google Ads is slowly killing my business and I don't know what to do"?
+
+---
+
+**[0:15–0:35] NAMING THE ANXIETY — Agreements 1 & 2**
+
+Nobody talks about this part of running PPC.
+
+The quiet anxiety. The spreadsheet you update every Monday that shows CPL trending up and volume trending down. The agency call where they say "we're optimizing" but the numbers don't change. The pit in your stomach when you realize you spent $12K last month and got fewer leads than you got for $7K a year ago.
+
+**[VISUAL: Text overlay — "Year over year: +40% spend. –25% leads. Same markets."]**
+
+You're not bad at this. The platform changed underneath you. AI ate the search volume. iBuyers ate the auction. And you're left spending more to get less while pretending everything is fine.
+
+Therefore, the 3AM dashboard check isn't a habit. It's a symptom. A symptom of building your business on a platform that's working against you.
+
+---
+
+**[0:35–0:55] THE ALTERNATIVE — Agreements 3 & 4**
+
+Imagine a different 3AM.
+
+You can't sleep. You check your phone. But instead of Google Ads, you check your Meta dashboard. The numbers: 140 leads this month. $48 CPL. Down from $55 last month. Trending in the right direction. Your retargeting audiences are growing. Your brand recognition is building.
+
+**[VISUAL: Text overlay — "PPC: numbers get worse every month. Meta: numbers get better every month."]**
+
+You close the app and actually fall asleep. Because the system is compounding in your favor. Not eroding under your feet.
+
+That's not a fantasy. That's what happens when you build on a channel where your costs decrease over time instead of increase.
+
+---
+
+**[0:55–1:15] CTA + ANTI-CTA**
+
+If you know the 3AM dashboard feeling — that quiet dread when the numbers confirm what you already knew — it's not going to get better on Google. The structural decline is real and it's accelerating.
+
+Link below. Free analysis. Fifteen minutes. Let's see what your numbers look like on a platform where 3AM feels different.
+
+Or keep checking the same dashboard and hoping the lines reverse. They won't. The platform isn't broken. It's working exactly as designed. Just not for you.`,
+  },
+  {
+    id: "video-15",
+    number: 15,
+    title: "The Attribution Illusion",
+    layer: "cold",
+    format: "video",
+    angle: "Google gets credit for leads that would have called you anyway — you're paying for brand searches that were already yours",
+    duration: "70 seconds",
+    emotionalState: "Intellectual betrayal — realizing Google is charging you for your own brand equity",
+    script: `**[VISUAL: Speaker at computer showing a Google Ads campaign. Text overlay: "Google is charging you for leads you already earned. Here's how."]**
+
+**[0:00–0:12] HOOK**
+
+Pull up your Google Ads search terms report right now. Look at your converting keywords.
+
+How many of them include your company name? Or your brand? Or a variation of your name that means someone already knew you and searched for you specifically?
+
+**[Scroll Stop]** Google charged you $40 to $60 for that click.
+
+**[Snapback]** For a person who was already going to call you. They already knew your name. They just used Google to find your phone number. And Google billed you for the privilege.
+
+---
+
+**[0:12–0:30] THE ILLUSION — Agreements 1 & 2**
+
+This is the attribution illusion. Google takes credit for conversions it didn't create.
+
+A homeowner sees your direct mail. Or hears about you from a neighbor. Or remembers your brand from a Facebook ad they saw 6 weeks ago. They go to Google and search your company name. They click your ad. Google records it as a "Google Ads conversion."
+
+**[VISUAL: Text overlay — "Branded search = Google charging you for leads you already created."]**
+
+Your agency reports it as PPC performance. Your dashboard shows a conversion. But Google didn't create that lead. Your brand did. Your marketing did. Google just charged you $50 for being the middleman.
+
+Therefore, 20 to 40% of your "Google PPC leads" aren't Google leads at all. They're brand leads that Google intercepted and billed you for.
+
+Strip those out, and your real Google CPL is 30 to 50% higher than your dashboard shows.
+
+---
+
+**[0:30–0:50] THE FIX — Agreements 3 & 4**
+
+When you run pre-distressed Meta targeting, you build brand awareness directly. Homeowners see your content, trust your name, and reach out through your form — not through a Google search.
+
+**[VISUAL: Text overlay — "Meta: direct attribution. No middleman. No brand tax."]**
+
+They don't Google you. They don't click a paid ad. They fill out your form directly from the platform where they built trust.
+
+Therefore, every lead is attributable. Every dollar of spend maps to a real outcome. No attribution illusion. No Google skimming your brand equity.
+
+And the 20 to 40% of leads Google was charging you for? Those become free. Because homeowners go directly to you instead of routing through Google's toll booth.
+
+---
+
+**[0:50–1:10] CTA + ANTI-CTA**
+
+Check your search terms report. Count the branded queries. Multiply by your CPC. That's how much Google is charging you for leads your brand already created.
+
+Link below. Free analysis. We'll calculate your attribution illusion and show you what your real CPL looks like once you stop paying Google for your own brand equity.
+
+Or keep paying $50 every time someone types your company name into a search bar. That's not marketing. That's a toll road.`,
+  },
 ];
 
 export const textAds: Ad[] = [
@@ -850,6 +1212,142 @@ If you're spending $5K+ a month on Google and your cost per deal is above $3,500
 Or keep playing an auction game against opponents who can afford to lose indefinitely. The house always wins. And you're not the house.`,
     script: "",
   },
+  {
+    id: "text-6",
+    number: 6,
+    title: "The Split Test Challenge",
+    layer: "cold",
+    format: "text",
+    angle: "Direct challenge — run both channels side-by-side for 90 days and let the data decide. No risk, just math.",
+    emotionalState: "Competitive curiosity — the data-driven operator who can't resist a test",
+    headline: "Run Google PPC and Meta side-by-side for 90 days. Let the data decide.",
+    description: "No commitment. No risk. Just math. Free analysis to set up the test.",
+    ctaButton: "Learn More",
+    primaryText: `Here's a challenge for every wholesale operator spending $5K+ a month on Google PPC.
+
+Don't take my word for it. Don't trust the data I show you. Don't believe a single claim I make.
+
+Instead — test it.
+
+Take $3K of your current Google budget. Move it to pre-distressed Meta targeting. Run both channels side-by-side for 90 days. Same markets. Same acquisition team. Same CRM.
+
+After 90 days, compare:
+
+→ Cost per lead: Google vs. Meta
+→ Cost per deal: Google vs. Meta
+→ Close rate: Google vs. Meta
+→ Lead quality (1-call close rate): Google vs. Meta
+→ Time to close: Google vs. Meta
+
+That's it. No commitment. No contract. Just a data-driven test.
+
+Here's what happens every single time an operator runs this test:
+
+Month 1: "The Meta leads are cheaper but I'm not sure about quality."
+Month 2: "Wait — the Meta leads are closing faster than PPC leads."
+Month 3: "I'm shifting 70% of my budget to Meta. The data isn't close."
+
+We've seen this play out with dozens of operators. Not because we're great salespeople. Because the math is the math.
+
+If you're confident in your Google campaigns — prove it. Run the test. If Google wins, you'll know for certain and you'll have lost nothing.
+
+If Meta wins? You just found the channel that breaks your revenue ceiling.
+
+→ Free PPC vs. Meta Analysis to Set Up the Test [LINK]
+
+Or don't test it. Keep spending $10K a month on Google without ever measuring it against an alternative. That's not confidence. That's avoidance.`,
+    script: "",
+  },
+  {
+    id: "text-7",
+    number: 7,
+    title: "The Agency's Dirty Secret",
+    layer: "cold",
+    format: "text",
+    angle: "PPC agencies profit from your rising CPCs — their incentive is to keep you spending, not to tell you the platform is dying",
+    emotionalState: "Distrust awakening — 'Wait, my agency benefits from my costs going up?'",
+    headline: "Your PPC agency makes more money when your CPC goes up. Think about that.",
+    description: "Misaligned incentives are costing you thousands. Free second opinion.",
+    ctaButton: "Learn More",
+    primaryText: `Your PPC agency charges a percentage of your ad spend. Usually 10 to 20%.
+
+Think about what that means.
+
+When Google raises your CPC from $40 to $60? Your agency's revenue goes up 50%. Same work. Same results. More money.
+
+When AI Overviews eat your click volume and you have to increase budget to maintain lead count? Your agency's revenue goes up. Your ROI goes down.
+
+When you ask "Should I diversify off Google?" — the honest answer might cost them 50% of their revenue from your account. What do you think they'll say?
+
+This isn't a conspiracy. It's incentive alignment. Or rather, misalignment.
+
+Your agency profits when you spend more on Google.
+You profit when your cost per deal goes down.
+
+Those two things are increasingly opposed — because Google's platform is structurally declining.
+
+→ Your CPC: up 35-50% year over year
+→ Your click volume: down 20-30% due to AI
+→ Your cost per deal: up every quarter
+→ Your agency's revenue from your account: up every quarter
+
+See the problem?
+
+A PPC agency will never be the one to tell you it's time to leave Google. Not because they're dishonest — because their mortgage payment depends on you staying.
+
+We don't charge a percentage of ad spend. We don't profit when your costs go up. We profit when you get deals. Full stop.
+
+→ Free Second Opinion: Your PPC Numbers vs. Reality [LINK]
+
+Or keep getting advice from people whose income goes up when yours goes down. That's not a partnership. That's a conflict of interest.`,
+    script: "",
+  },
+  {
+    id: "text-8",
+    number: 8,
+    title: "The Close Rate Gap",
+    layer: "cold",
+    format: "text",
+    angle: "The hidden difference — PPC leads close at 3-5% because they're cold and shared. Pre-distressed leads close at 12-18% because trust is pre-built.",
+    emotionalState: "Mathematical revelation — 'If I could 4x my close rate with the same team...'",
+    headline: "Your team closes PPC leads at 4%. Same team closes Meta leads at 15%. Here's why.",
+    description: "The lead source changes the close rate. Not the team. Free analysis.",
+    ctaButton: "Learn More",
+    primaryText: `Your acquisition team closes Google PPC leads at 3 to 5%.
+
+You've tried new scripts. New training. New tools. New CRMs. The close rate barely moves.
+
+Here's why: the problem isn't your team.
+
+A Google PPC lead arrives cold. They searched a keyword. They clicked the first ad. They filled out a form — yours and 3 others. They don't know your company name. They don't trust you. They're comparison shopping.
+
+Your rep calls. It's stranger calling stranger. The conversation starts at zero trust. Your rep has to build rapport, establish credibility, overcome skepticism, and compete against 4 other offers — all in one call.
+
+3 to 5% close rate on those conditions? That's not bad. That's actually impressive.
+
+Now change one variable: the lead source.
+
+A pre-distressed Meta lead has been seeing your brand for 6 to 12 weeks. Educational content. Trust-building videos. Your name in their feed alongside content that helped them understand their situation.
+
+When they fill out your form, it's only your form. When your rep calls, the homeowner says "Oh yeah, I've been seeing your stuff. I think we should talk."
+
+→ The conversation starts at trust level 7 instead of trust level 0
+→ No competition on the call — they only contacted you
+→ Higher motivation — they've been processing for weeks
+→ Faster decision — the relationship is already established
+
+Close rate: 12 to 18%. Same team. Same scripts. Same process.
+
+Your team isn't the bottleneck. The channel is.
+
+100 PPC leads × 4% close = 4 deals at $40K spend = $10,000/deal
+100 Meta leads × 15% close = 15 deals at $5,500 spend = $367/deal
+
+→ Free Close Rate Analysis for Your Markets [LINK]
+
+Or keep blaming the team and buying more training courses. The team is fine. The leads are the problem.`,
+    script: "",
+  },
 ];
 
 export const retargetingAds: Ad[] = [
@@ -978,6 +1476,104 @@ The leads are warmer. They already know who we are. My reps aren't competing wit
 
 I wish someone had shown me this two years ago. I would've saved $150K."`,
   },
+  {
+    id: "retarget-5",
+    number: 5,
+    title: "The Migration Timeline",
+    layer: "warm",
+    format: "text",
+    angle: "Step-by-step migration plan — shows exactly how the transition from PPC to Meta works over 90 days",
+    emotionalState: "Planning mode — wants to see the roadmap before committing",
+    headline: "The 90-day PPC-to-Meta migration plan. Step by step.",
+    ctaButton: "Book Now",
+    audience: "Video viewers from ads #1-15, landing page visitors who engaged but didn't book",
+    primaryText: `You've seen the data. You know the math. But you're wondering: "How does this actually work? What does the migration look like?"
+
+Here's the exact 90-day timeline:
+
+**Days 1-7: Foundation**
+→ We analyze your current PPC data (CPL, close rate, cost per deal, markets)
+→ Set up your pre-distressed Meta targeting campaigns
+→ Launch alongside your existing PPC — don't turn anything off
+
+**Days 8-30: First Data**
+→ First Meta leads arrive within 48 hours of launch
+→ Your team works Meta leads alongside PPC leads — same process
+→ End of month 1: you have real side-by-side data
+
+**Days 31-60: Optimization**
+→ Meta pixel has 30 days of conversion data — targeting sharpens
+→ Retargeting audiences start building from video views and page visits
+→ Your CPL starts dropping as the algorithm learns your ideal seller
+→ Most operators see Meta outperforming PPC by Day 45
+
+**Days 61-90: Shift**
+→ The data is clear. Meta produces more deals at lower cost.
+→ You decide how much to shift — 50%, 70%, or 90% of budget
+→ Keep branded search on Google ($1-2K) for the people who search your name
+→ Reallocate the rest to Meta where it compounds
+
+After 90 days:
+→ Lower cost per deal
+→ Higher close rate
+→ Growing brand equity
+→ Compounding returns
+
+You don't have to decide everything today. You just have to see the numbers.
+
+→ Book Your Free PPC vs. Meta Analysis [LINK]`,
+    script: "",
+  },
+  {
+    id: "retarget-6",
+    number: 6,
+    title: "The Calculator",
+    layer: "warm",
+    format: "text",
+    angle: "Make them do the math with their own numbers — interactive-style ad that walks through the calculation",
+    emotionalState: "Self-discovery — arriving at the conclusion using their own data",
+    headline: "Grab your Google Ads dashboard. Let's do the math together.",
+    ctaButton: "Book Now",
+    audience: "50%+ video viewers, landing page visitors who didn't convert",
+    primaryText: `Open your Google Ads dashboard. I'll wait.
+
+Got it? Good. Now let's do the math together.
+
+Step 1: What's your monthly PPC spend?
+(Most operators reading this: $5K to $15K)
+
+Step 2: How many leads did you get last month?
+(Divide spend by lead count = your CPL)
+
+Step 3: How many of those leads became deals?
+(Divide deals by leads = your close rate)
+
+Step 4: What's your cost per deal?
+(Divide total spend by deals closed)
+
+Now let me give you the comparison numbers:
+
+→ Average CPL on pre-distressed Meta: $45
+→ Average close rate on Meta leads: 14%
+→ Average cost per deal on Meta: $1,200
+
+Take your monthly PPC spend and divide it by $45. That's how many Meta leads that same budget would produce.
+
+Multiply by 14%. That's how many deals.
+
+Divide your spend by that deal count. That's your new cost per deal.
+
+Is it lower than what you just calculated from Google?
+
+(It is. Every single time. For every operator who's run this exercise.)
+
+The math isn't complicated. It's just uncomfortable — because it shows you what you've been overpaying.
+
+→ Book a Free Analysis — We'll Run the Full Comparison for Your Markets [LINK]
+
+Or close your Google Ads dashboard and don't think about it until 3AM. Your call.`,
+    script: "",
+  },
 ];
 
 export const hotAds: Ad[] = [
@@ -1058,6 +1654,81 @@ This is built for wholesale operators spending $5K+ a month on Google PPC. If th
 → Book Your Free Analysis [LINK]
 
 No pressure. No pitch. Just math.`,
+    script: "",
+  },
+  {
+    id: "hot-4",
+    number: 4,
+    title: "The One Question",
+    layer: "hot",
+    format: "text",
+    angle: "Single powerful question that reframes inaction as the riskier choice",
+    emotionalState: "Decision crystallization — one question that tips the scale",
+    headline: "One question. Then I'll stop.",
+    ctaButton: "Book Now",
+    audience: "Landing page visitors who started but didn't complete the form, repeat visitors",
+    primaryText: `One question. Then I'll stop showing you these ads.
+
+If your Google PPC cost per deal is $4,000 today — and the platform's structural decline means it'll be $5,500 next year and $7,000 the year after —
+
+At what price do you finally look at an alternative?
+
+$6,000 per deal? $8,000? $10,000?
+
+Or do you just keep paying whatever Google charges and call it "the cost of doing business"?
+
+There's a number where it stops making sense. For most operators, that number was two quarters ago. They just haven't done the math yet.
+
+We'll do the math for you. Free. Fifteen minutes.
+
+→ Book Your Free Analysis [LINK]
+
+That's it. One call. If the numbers don't work, you'll know in 15 minutes and I'll stop asking.`,
+    script: "",
+  },
+  {
+    id: "hot-5",
+    number: 5,
+    title: "Last Chance Math",
+    layer: "hot",
+    format: "text",
+    angle: "Final push — calculate exactly what they'll waste in the next 90 days if they don't act now",
+    emotionalState: "Loss aversion — seeing the exact dollar amount they'll waste by waiting",
+    headline: "In the next 90 days, you'll spend $____ on Google PPC. How much will you keep?",
+    ctaButton: "Book Now",
+    audience: "Calendar page visitors who didn't book, form abandoners, 3+ page views",
+    primaryText: `Let's do quick math on the next 90 days.
+
+You're spending roughly $8K to $12K a month on Google PPC. That's $24K to $36K over the next 90 days.
+
+At your current CPL of $350 to $500, that produces 50 to 100 leads.
+
+At your current close rate of 3 to 5%, that produces 2 to 5 deals.
+
+Your cost per deal: $5,000 to $12,000.
+
+Now here's the same 90 days on pre-distressed Meta:
+
+Same $8K to $12K per month. CPL: $45. That produces 530 to 800 leads over 90 days.
+
+Close rate of 14%: 74 to 112 deals.
+
+Cost per deal: $320 to $490.
+
+The difference over 90 days:
+
+→ Google: 2-5 deals. $24K-$36K spent.
+→ Meta: 74-112 deals. Same spend.
+
+Every day you wait costs you roughly the difference between those two numbers, divided by 90.
+
+That's hundreds of dollars a day. In deals you're not closing. From leads you're not getting. On a platform you're overpaying for.
+
+The call is free. It takes 15 minutes. And it could save you $20K+ in the next quarter alone.
+
+→ Book Now [LINK]
+
+Or wait another 90 days. That's your right. It's also $24K to $36K you won't get back.`,
     script: "",
   },
 ];

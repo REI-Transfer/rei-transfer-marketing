@@ -54,49 +54,78 @@ const formatBadge = {
   carousel: "bg-cyan-500/20 text-cyan-300",
 };
 
-export default function AdCard({ ad }: { ad: Ad }) {
+interface AdCardProps {
+  ad: Ad;
+  completed: boolean;
+  onToggleComplete: (id: string) => void;
+}
+
+export default function AdCard({ ad, completed, onToggleComplete }: AdCardProps) {
   const [expanded, setExpanded] = useState(false);
 
   const mainContent = ad.script || ad.primaryText || "";
   const plainText = mainContent.replace(/\*\*\[?[^\]]*\]?\*\*/g, "").replace(/\*\*/g, "").replace(/---/g, "").trim();
 
   return (
-    <div className={`rounded-xl border ${layerColors[ad.layer]} transition-all`}>
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="flex w-full items-start gap-4 p-5 text-left"
-      >
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-zinc-800 font-mono text-sm font-bold text-zinc-300">
-          {ad.format === "video" ? `V${ad.number}` : ad.format === "text" ? `T${ad.number}` : ad.layer === "hot" ? `H${ad.number}` : `R${ad.number}`}
-        </div>
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-2 mb-1.5">
-            <span className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${layerBadge[ad.layer]}`}>
-              {ad.layer}
-            </span>
-            <span className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${formatBadge[ad.format]}`}>
-              {ad.format}
-            </span>
-            {ad.duration && (
-              <span className="inline-block rounded-full bg-zinc-800 px-2.5 py-0.5 text-[10px] font-medium text-zinc-400">
-                {ad.duration}
-              </span>
-            )}
-          </div>
-          <h3 className="text-lg font-semibold text-white">
-            {ad.title}
-          </h3>
-          <p className="mt-1 text-sm text-zinc-400 line-clamp-2">{ad.angle}</p>
-        </div>
-        <svg
-          className={`h-5 w-5 shrink-0 text-zinc-500 transition-transform ${expanded ? "rotate-180" : ""}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
+    <div className={`rounded-xl border ${completed ? "border-emerald-500/30 bg-emerald-500/5" : layerColors[ad.layer]} transition-all ${completed ? "opacity-60" : ""}`}>
+      <div className="flex items-start">
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="flex flex-1 items-start gap-4 p-5 text-left"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+          <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${completed ? "bg-emerald-900/50" : "bg-zinc-800"} font-mono text-sm font-bold ${completed ? "text-emerald-400" : "text-zinc-300"}`}>
+            {ad.format === "video" ? `V${ad.number}` : ad.format === "text" ? `T${ad.number}` : ad.layer === "hot" ? `H${ad.number}` : `R${ad.number}`}
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
+              <span className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${layerBadge[ad.layer]}`}>
+                {ad.layer}
+              </span>
+              <span className={`inline-block rounded-full px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${formatBadge[ad.format]}`}>
+                {ad.format}
+              </span>
+              {ad.duration && (
+                <span className="inline-block rounded-full bg-zinc-800 px-2.5 py-0.5 text-[10px] font-medium text-zinc-400">
+                  {ad.duration}
+                </span>
+              )}
+              {completed && (
+                <span className="inline-block rounded-full bg-emerald-500/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                  Completed
+                </span>
+              )}
+            </div>
+            <h3 className={`text-lg font-semibold ${completed ? "text-zinc-400 line-through" : "text-white"}`}>
+              {ad.title}
+            </h3>
+            <p className="mt-1 text-sm text-zinc-400 line-clamp-2">{ad.angle}</p>
+          </div>
+          <svg
+            className={`h-5 w-5 shrink-0 text-zinc-500 transition-transform ${expanded ? "rotate-180" : ""}`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggleComplete(ad.id);
+          }}
+          className={`mt-5 mr-5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border-2 transition-all ${
+            completed
+              ? "border-emerald-500 bg-emerald-500 text-white"
+              : "border-zinc-600 bg-transparent text-transparent hover:border-zinc-400"
+          }`}
+          title={completed ? "Mark as incomplete" : "Mark as completed"}
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </button>
+      </div>
 
       {expanded && (
         <div className="border-t border-zinc-800 px-5 pb-5">
