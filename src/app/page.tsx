@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import AdCard from "@/components/AdCard";
+import SellerScriptCard from "@/components/SellerScriptCard";
 import { videoAds, textAds, retargetingAds, hotAds } from "@/data/ads";
+import { vslScripts, thankYouScripts, faqScripts, allSellerScripts } from "@/data/sellerScripts";
 
-type Tab = "all" | "video" | "text" | "retargeting" | "hot" | "deploy";
+type Tab = "all" | "video" | "text" | "retargeting" | "hot" | "seller" | "deploy";
 
 const STORAGE_KEY = "rei-transfer-completed-ads";
 
@@ -14,6 +16,7 @@ const tabs: { id: Tab; label: string; count?: number }[] = [
   { id: "text", label: "Text/Image", count: textAds.length },
   { id: "retargeting", label: "Retargeting", count: retargetingAds.length },
   { id: "hot", label: "Hot Retarget", count: hotAds.length },
+  { id: "seller", label: "Seller Scripts", count: allSellerScripts.length },
   { id: "deploy", label: "Deployment Guide" },
 ];
 
@@ -61,12 +64,13 @@ export default function Home() {
     });
   };
 
-  const completedCount = completedIds.size;
-  const totalCount = allAds.length;
+  const allItems = [...allAds.map(a => a.id), ...allSellerScripts.map(s => s.id)];
+  const completedCount = allItems.filter(id => completedIds.has(id)).length;
+  const totalCount = allItems.length;
   const progressPct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
 
   const filteredAds = allAds.filter((ad) => {
-    if (activeTab === "deploy") return false;
+    if (activeTab === "deploy" || activeTab === "seller") return false;
     if (activeTab === "video" && ad.format !== "video") return false;
     if (activeTab === "text" && ad.format !== "text") return false;
     if (activeTab === "retargeting" && ad.layer !== "warm") return false;
@@ -86,11 +90,25 @@ export default function Home() {
     return true;
   });
 
+  const filteredSellerScripts = allSellerScripts.filter((s) => {
+    if (hideCompleted && completedIds.has(s.id)) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      return (
+        s.title.toLowerCase().includes(q) ||
+        s.purpose.toLowerCase().includes(q) ||
+        (s.emotionalState?.toLowerCase().includes(q) ?? false) ||
+        (s.objectionHandled?.toLowerCase().includes(q) ?? false)
+      );
+    }
+    return true;
+  });
+
   const stats = [
     { label: "Video Scripts", value: videoAds.length, color: "text-purple-400" },
     { label: "Text/Image", value: textAds.length, color: "text-emerald-400" },
-    { label: "Retargeting", value: retargetingAds.length, color: "text-amber-400" },
-    { label: "Hot Retarget", value: hotAds.length, color: "text-red-400" },
+    { label: "Retargeting", value: retargetingAds.length + hotAds.length, color: "text-amber-400" },
+    { label: "Seller Scripts", value: allSellerScripts.length, color: "text-sky-400" },
   ];
 
   return (
@@ -183,8 +201,93 @@ export default function Home() {
           )}
         </div>
 
+        {/* Seller Scripts */}
+        {activeTab === "seller" && (
+          <div className="space-y-3">
+            <SectionHeader title="Landing Page VSL" count={vslScripts.length} color="violet" />
+            {vslScripts
+              .filter((s) => filteredSellerScripts.includes(s))
+              .map((s) => (
+                <SellerScriptCard
+                  key={s.id}
+                  script={s}
+                  completed={completedIds.has(s.id)}
+                  onToggleComplete={toggleComplete}
+                />
+              ))}
+
+            <SectionHeader title="Thank You Page Video" count={thankYouScripts.length} color="teal" />
+            {thankYouScripts
+              .filter((s) => filteredSellerScripts.includes(s))
+              .map((s) => (
+                <SellerScriptCard
+                  key={s.id}
+                  script={s}
+                  completed={completedIds.has(s.id)}
+                  onToggleComplete={toggleComplete}
+                />
+              ))}
+
+            <SectionHeader title="FAQ Videos" count={faqScripts.length} color="sky" />
+            {faqScripts
+              .filter((s) => filteredSellerScripts.includes(s))
+              .map((s) => (
+                <SellerScriptCard
+                  key={s.id}
+                  script={s}
+                  completed={completedIds.has(s.id)}
+                  onToggleComplete={toggleComplete}
+                />
+              ))}
+
+            {filteredSellerScripts.length === 0 && (
+              <p className="text-center text-zinc-500 py-12">No scripts match your search.</p>
+            )}
+
+            {/* Filming & Production Notes */}
+            <div className="mt-8 space-y-6 max-w-4xl">
+              <SectionHeader title="Filming & Production Notes" count={0} color="zinc" />
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  { label: "Camera", value: "Phone (iPhone/Samsung) or mirrorless camera. NOT a studio production. Authenticity converts this audience." },
+                  { label: "Setting", value: "Real environment — home office, kitchen table, living room. Clean background but NOT staged." },
+                  { label: "Lighting", value: "Natural light from a window (best) or simple ring light. Warm tones. Avoid harsh fluorescents." },
+                  { label: "Framing", value: "Head and shoulders. Camera at eye level. Look directly into the camera lens, not the screen." },
+                  { label: "Wardrobe", value: "Casual professional. Button-down or clean polo. No suits. No branded shirts. Look like a trustworthy neighbor." },
+                  { label: "Captions", value: "ALWAYS on. Bold, high-contrast. 65%+ of video is watched with sound off on mobile." },
+                ].map((item) => (
+                  <div key={item.label} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                    <p className="text-xs font-semibold text-zinc-400">{item.label}</p>
+                    <p className="text-sm text-zinc-300 mt-1">{item.value}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                <p className="text-sm font-semibold text-white mb-2">Filming Order (Shoot in One Session)</p>
+                <div className="space-y-1.5 text-sm text-zinc-400">
+                  <p>1. FAQ videos first (shorter, easier to warm up with)</p>
+                  <p>2. Thank You page video (medium length, conversational)</p>
+                  <p>3. VSL last (longest, most important — you'll be warmed up by this point)</p>
+                  <p className="text-zinc-500 mt-2">Total filming time: 3–4 hours with setup and retakes</p>
+                </div>
+              </div>
+
+              <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                <p className="text-sm font-semibold text-white mb-2">Expected Impact</p>
+                <div className="space-y-1.5 text-sm text-zinc-400">
+                  <p>20–30% increase in call answer rates</p>
+                  <p>15–25% increase in appointment show rates</p>
+                  <p>Shorter sales calls — objections pre-handled</p>
+                  <p>Higher close rates — trust built before conversation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Ad Cards */}
-        {activeTab !== "deploy" && (
+        {activeTab !== "deploy" && activeTab !== "seller" && (
           <div className="space-y-3">
             {activeTab === "all" && (
               <>
@@ -280,6 +383,10 @@ function SectionHeader({ title, count, color }: { title: string; count: number; 
     emerald: "border-emerald-500/30 text-emerald-400",
     amber: "border-amber-500/30 text-amber-400",
     red: "border-red-500/30 text-red-400",
+    violet: "border-violet-500/30 text-violet-400",
+    teal: "border-teal-500/30 text-teal-400",
+    sky: "border-sky-500/30 text-sky-400",
+    zinc: "border-zinc-500/30 text-zinc-400",
   };
   return (
     <div className={`mt-8 mb-3 flex items-center gap-3 border-b ${colors[color]?.split(" ")[0] || "border-zinc-800"} pb-2`}>
